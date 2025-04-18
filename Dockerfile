@@ -1,6 +1,6 @@
 FROM quay.io/keycloak/keycloak:22.0.1
 
-# Establecer variables de entorno
+# Set environment variables
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=secret
 ENV KC_DB=mysql
@@ -14,11 +14,11 @@ ENV KC_TRANSACTION_XA_ENABLED=false
 ENV KC_HTTP_ENABLED=true
 ENV KC_HTTP_PORT=8080
 
-# Este paso es esencial - construye Keycloak antes de iniciarlo
+# Build Keycloak before starting it
 RUN /opt/keycloak/bin/kc.sh build
 
-# Exponer el puerto explícitamente
+# Expose port
 EXPOSE 8080
 
-# Iniciar Keycloak en modo producción en lugar de desarrollo
-CMD ["/opt/keycloak/bin/kc.sh", "start", "--optimized", "--http-enabled=true", "--hostname-strict=false"]
+# Start Keycloak in production mode
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--optimized", "--http-enabled=true", "--hostname-strict=false"]
