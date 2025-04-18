@@ -15,7 +15,7 @@ ENV KC_HTTP_ENABLED=true
 ENV KC_HTTP_PORT=8080
 
 # Este paso es esencial - construye Keycloak antes de iniciarlo
-RUN kc.sh build
+RUN /opt/keycloak/bin/kc.sh build
 
 # Exponer el puerto explícitamente
 EXPOSE 8080
