@@ -21,4 +21,4 @@ RUN /opt/keycloak/bin/kc.sh build
 EXPOSE 8080
 
 # Iniciar Keycloak en modo producción en lugar de desarrollo
-CMD ["kc.sh", "start", "--optimized", "--http-enabled=true", "--hostname-strict=false"]
+CMD ["/opt/keycloak/bin/kc.sh", "start", "--optimized", "--http-enabled=true", "--hostname-strict=false"]
