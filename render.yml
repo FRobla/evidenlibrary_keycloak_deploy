@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: keycloak
+    env: docker
+    plan: free
+    buildCommand: ""
+    startCommand: ""
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 8080
