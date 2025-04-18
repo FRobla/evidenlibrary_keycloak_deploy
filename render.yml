@@ -5,7 +5,7 @@ services:
     plan: free
     buildCommand: ""
     startCommand: ""
-    healthCheckPath: /
+    healthCheckPath: /health
     envVars:
       - key: PORT
         value: 8080
